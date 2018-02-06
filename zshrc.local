@@ -1,0 +1,16 @@
+if [ -z "$INSIDE_EMACS" ]; then
+    if [[ $TERM == tmux-256color || $TERM == xterm-256color || $TERM == xterm-termite ]]; then
+	    POWERLEVEL9K_MODE='awesome-font-config'
+	    source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+    fi
+fi
+if [[ $TERM == xterm-termite ]]; then
+    . /etc/profile.d/vte.sh
+    __vte_osc7
+fi
+alias vim=nvim
+alias vi=nvim
+alias mutt=neomutt
+export VISUAL=nvim
+export EDITOR=$VISUAL
+KEYTIMEOUT=1
