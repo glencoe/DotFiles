@@ -129,3 +129,18 @@ inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
 imap <expr><C-l> pumvisible() ? "\<C-y>" : neosnippet#expandable_or_jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "\<C-l>"
 "change the window-local current directory to the current files directory
 "autocmd BufEnter * silent! lcd %:p:h
+
+if has("cscope")
+  set csprg=/usr/local/bin/cscope
+  set csto=0
+  set cst
+  set nocsverb
+  " add any database in current directory
+  if filereadable("cscope.out")
+    cs add cscope.out
+    " else add database pointed to by environment
+  elseif $CSCOPE_DB != ""
+    cs add $CSCOPE_DB
+  endif
+  set csverb
+endif
