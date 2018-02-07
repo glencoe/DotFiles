@@ -70,6 +70,10 @@ if dein#load_state('/home/luk/.local/share/dein')
   call dein#add('Shougo/neomru.vim')
   call dein#add('chriskempson/base16-vim')
   call dein#add('jceb/vim-orgmode')
+  call dein#add('tpope/vim-speeddating')
+  call dein#add('tpope/vim-projectionist')
+  call dein#add('airblade/vim-rooter')
+  call dein#add('hecal3/vim-leader-guide')
   " You can specify revision/branch/tag.
   "call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
 
@@ -111,6 +115,7 @@ let g:echodoc#enable_at_startup = 1
 
 source /home/luk/.config/nvim/denite.vim
 source /home/luk/.config/nvim/lightline.vim
+source /home/luk/.config/nvim/keymapping.vim
 " use deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
@@ -131,7 +136,7 @@ imap <expr><C-l> pumvisible() ? "\<C-y>" : neosnippet#expandable_or_jumpable() ?
 "autocmd BufEnter * silent! lcd %:p:h
 
 if has("cscope")
-  set csprg=/usr/local/bin/cscope
+  set csprg=/usr/bin/cscope
   set csto=0
   set cst
   set nocsverb
