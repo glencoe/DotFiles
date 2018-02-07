@@ -94,7 +94,8 @@ set ignorecase
 set mouse=v
 set hlsearch
 set number relativenumber
-set wildmode=longest,list
+set wildmode=longest,list,full
+set wildmenu
 set cc=80
 set termguicolors
 set timeoutlen=1000 ttimeoutlen=0
@@ -120,17 +121,14 @@ let g:deoplete#sources#clang#executable = '/usr/bin/clang'
 let g:deoplete#sources = {}
 let g:deoplete#sources.c = ['rtags', 'around', 'file', 'syntax']
 call deoplete#custom#source('around', 'rank', 50)
-set completeopt=menuone,longest
+set completeopt+=noinsert
 
 " deoplete tab completion
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <expr><C-j> pumvisible() ? "\<c-n>" : "\<C-j>"
+inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
-inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
-imap <expr><C-l> pumvisible() ? "\<C-y>" : neosnippet#expandable_or_jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "\<C-l>"
-"change the window-local current directory to the current files directory
-"autocmd BufEnter * silent! lcd %:p:h
-
+inoremap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
+imap <expr><C-l> pumvisible() ? deoplete#complete_common_string() : neosnippet#expandable_or_jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "\<C-l>"
+inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 if has("cscope")
   set csprg=/usr/bin/cscope
   set csto=0
