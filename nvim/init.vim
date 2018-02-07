@@ -42,7 +42,6 @@ if dein#load_state('/home/luk/.local/share/dein')
   call dein#add('eagletmt/neco-ghc')
   call dein#add('zchee/deoplete-jedi')
   call dein#add('zchee/deoplete-zsh')
-  call dein#add('SevereOverfl0w/deoplete-github')
   " auto completion engine
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/neco-vim')
