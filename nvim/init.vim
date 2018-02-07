@@ -21,28 +21,25 @@ if dein#load_state('/home/luk/.local/share/dein')
   call dein#add('tpope/vim-surround')
   "set tabstop width and co heuristically
   call dein#add('tpope/vim-sleuth')
-  "call dein#add('bling/vim-bufferline')
   "git wrapper
   call dein#add('tpope/vim-fugitive')
+
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
-  "call dein#add('vim-airline/vim-airline')
-  "call dein#add('vim-airline/vim-airline-themes')
   call dein#add('itchyny/lightline.vim')
   call dein#add('ap/vim-buftabline')
-  "call dein#add('scrooloose/nerdcommenter')
   call dein#add('tpope/vim-commentary')
   call dein#add('vim-ruby/vim-ruby')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('elzr/vim-json')
   call dein#add('lyuts/vim-rtags')
   call dein#add('pgdouyon/vim-accio')
+  " auto completion engine
   call dein#add('spinotech/deoplete-rtags')
   call dein#add('Shougo/deoplete-rct')
   call dein#add('eagletmt/neco-ghc')
   call dein#add('zchee/deoplete-jedi')
   call dein#add('zchee/deoplete-zsh')
-  " auto completion engine
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/neco-vim')
   call dein#add('Shougo/neco-syntax')
@@ -50,7 +47,9 @@ if dein#load_state('/home/luk/.local/share/dein')
   call dein#add('Shougo/denite.nvim', { 'rev': '879cba7' })
   call dein#add('Shougo/context_filetype.vim')
   call dein#add('Shougo/echodoc.vim')
+
   call dein#add('Konfekt/FastFold')
+
   call dein#add('mhinz/vim-janah')
   call dein#add('icymind/NeoSolarized')
   call dein#add('joshdick/onedark.vim')
@@ -60,8 +59,8 @@ if dein#load_state('/home/luk/.local/share/dein')
   call dein#add('vim-utils/vim-man')
   "use vims builtin file explorer as nerdtree replacement
   call dein#add('tpope/vim-vinegar')
+
   call dein#add('donRaphaco/neotex')
-  "call dein#add('yggdroot/indentline')
   call dein#add('thaerkh/vim-indentguides')
   call dein#add('thaerkh/vim-workspace')
   call dein#add('brooth/far.vim')
@@ -73,8 +72,6 @@ if dein#load_state('/home/luk/.local/share/dein')
   call dein#add('tpope/vim-projectionist')
   call dein#add('airblade/vim-rooter')
   call dein#add('hecal3/vim-leader-guide')
-  " You can specify revision/branch/tag.
-  "call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
 
   " Required:
   call dein#end()
