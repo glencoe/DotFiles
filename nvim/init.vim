@@ -33,6 +33,7 @@ if dein#load_state('/home/luk/.local/share/dein')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('elzr/vim-json')
   call dein#add('lyuts/vim-rtags')
+  call dein#add('brookhong/cscope.vim')
   call dein#add('pgdouyon/vim-accio')
   " auto completion engine
   call dein#add('spinotech/deoplete-rtags')
@@ -62,7 +63,7 @@ if dein#load_state('/home/luk/.local/share/dein')
 
   call dein#add('donRaphaco/neotex')
   call dein#add('thaerkh/vim-indentguides')
-  call dein#add('thaerkh/vim-workspace')
+  call dein#add('bazelbuild/vim-ft-bzl')
   call dein#add('brooth/far.vim')
   call dein#add('challenger-deep-theme/vim')
   call dein#add('Shougo/neomru.vim')
@@ -109,6 +110,8 @@ let delimitMate_expand_cr = 1
 "don't show current mode in under status bar
 set noshowmode
 let g:echodoc#enable_at_startup = 1
+let g:rooter_use_lcd = 1
+let g:rooter_silent_chdir=1
 
 source /home/luk/.config/nvim/denite.vim
 source /home/luk/.config/nvim/lightline.vim

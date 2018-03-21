@@ -31,7 +31,7 @@ let g:space_prefix_dict.w = { 'name': 'Window',
                                     \'d': ['close', 'close'],
                                     \'h': ['wincmd h', 'left'],
                                     \'l': ['wincmd l', 'right'],
-                                    \'k': ['wincmd l', 'up'],
+                                    \'k': ['wincmd k', 'up'],
                                     \'j': ['wincmd j', 'down'],
                                     \'H': ['wincmd H', 'move left'],
                                     \'L': ['wincmd L', 'move right'],
@@ -53,3 +53,5 @@ call leaderGuide#register_prefix_descriptions(' ', "g:space_prefix_dict")
 nmap <space> :LeaderGuide '<space>'<CR>
 nmap <space>. <Plug>leaderguide-global
 nmap <space>, <Plug>leaderguide-buffer
+nnoremap <leader>cd :call CscopeFind('g', expand('<cword>'))<CR>
+nnoremap <leader>ca :call CscopeFindInteractive(expand('<cword>'))<CR>
