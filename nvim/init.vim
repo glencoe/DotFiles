@@ -73,6 +73,7 @@ if dein#load_state('/home/luk/.local/share/dein')
   call dein#add('tpope/vim-projectionist')
   call dein#add('airblade/vim-rooter')
   call dein#add('hecal3/vim-leader-guide')
+  call dein#add('sirtaj/vim-openscad')
 
   " Required:
   call dein#end()
