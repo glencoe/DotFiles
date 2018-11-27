@@ -14,6 +14,8 @@ if dein#load_state('/home/luk/.local/share/dein')
   " Required:
   call dein#add('/home/luk/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
+  call dein#add('lyuts/vim-rtags')
+
   " Add or remove your plugins here:
   " autoclose brackets
   call dein#add('raimondi/delimitmate')
@@ -34,11 +36,9 @@ if dein#load_state('/home/luk/.local/share/dein')
   call dein#add('vim-ruby/vim-ruby')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('elzr/vim-json')
-  call dein#add('lyuts/vim-rtags')
   call dein#add('brookhong/cscope.vim')
   call dein#add('pgdouyon/vim-accio')
   " auto completion engine
-  call dein#add('spinotech/deoplete-rtags')
   call dein#add('Shougo/deoplete-rct')
   call dein#add('eagletmt/neco-ghc')
   call dein#add('zchee/deoplete-jedi')
@@ -95,5 +95,6 @@ syntax enable
 "End dein Scripts-------------------------
 source /home/luk/.config/nvim/denite.vim
 source /home/luk/.config/nvim/lightline.vim
-source /home/luk/.config/nvim/keymapping.vim
 source /home/luk/.config/nvim/deoplete.vim
+source /home/luk/.config/nvim/misc.vim
+source /home/luk/.config/nvim/keymapping.vim
