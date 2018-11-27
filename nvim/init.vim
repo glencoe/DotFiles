@@ -14,6 +14,7 @@ if dein#load_state('/home/luk/.local/share/dein')
   " Required:
   call dein#add('/home/luk/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
+  call dein#add('shiracamus/vim-syntax-x86-objdump-d')
   call dein#add('lyuts/vim-rtags')
 
   " Add or remove your plugins here:
@@ -27,6 +28,7 @@ if dein#load_state('/home/luk/.local/share/dein')
   call dein#add('tpope/vim-commentary')
   "git wrapper
   call dein#add('tpope/vim-fugitive')
+  call dein#add('junegunn/gv.vim')
 
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
