@@ -75,9 +75,8 @@ if dein#load_state('/home/lukas/.local/share/dein')
   call dein#add('thaerkh/vim-indentguides')
   call dein#add('bazelbuild/vim-ft-bzl')
   call dein#add('brooth/far.vim')
-  call dein#add('challenger-deep-theme/vim')
   call dein#add('Shougo/neomru.vim')
-  call dein#add('chriskempson/base16-vim')
+
   call dein#add('jceb/vim-orgmode')
   call dein#add('tpope/vim-speeddating')
   call dein#add('tpope/vim-projectionist')
@@ -85,6 +84,21 @@ if dein#load_state('/home/lukas/.local/share/dein')
   call dein#add('hecal3/vim-leader-guide')
   call dein#add('sirtaj/vim-openscad')
   call dein#add('wakatime/vim-wakatime')
+
+  "eyecandy
+  call dein#add('challenger-deep-theme/vim')
+  call dein#add('chriskempson/base16-vim')
+  call dein#add('jacoborus/tender')
+  call dein#add('nlknguyen/papercolor-theme')
+  call dein#add('luochen1990/rainbow')
+  call dein#add('octol/vim-cpp-enhanced-highlight')
+
+  "split single lines to multiple lines via one command
+  " run gS to split and gJ to join again
+  call dein#add('andrewradev/splitjoin.vim')
+
+  "code formatter
+  call dein#add('sbdchd/neoformat')
 
   " Required:
   call dein#end()

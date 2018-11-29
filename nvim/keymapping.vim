@@ -55,7 +55,7 @@ let g:space_prefix_dict.p = { 'name': 'Project',
                                     \'t': ['!bazel test test:all', 'run tests'],
                                     \}
 
-let g:space_prefix_dict.g = { 'name': 'Git',
+let g:space_prefix_dict.v = { 'name': 'Git',
                                     \'w': ['Gwrite', 'add and write'],
                                     \'c': ['Gcommit', 'commit'],
                                     \'p': ['Gpush', 'push'],
@@ -63,28 +63,34 @@ let g:space_prefix_dict.g = { 'name': 'Git',
                                     \'f': ['Gfetch', 'fetch'],
                                     \}
 
-call leaderGuide#register_prefix_descriptions(' ', "g:space_prefix_dict")
-nmap <space> :LeaderGuide '<space>'<CR>
-nmap <space>. <Plug>leaderguide-global
-nmap <space>, <Plug>leaderguide-buffer
-nnoremap <leader>cd :call CscopeFind('g', expand('<cword>'))<CR>
-nnoremap <leader>ca :call CscopeFindInteractive(expand('<cword>'))<CR>
+let g:leader_prefix_dict = {'name': 'Local Actions',
+                                    \'i': ['call rtags#SymbolInfo()', 'Symbol Info'],
+                                    \'.': ['call rtags#JumpTo(g:SAME_WINDOW, { "--declaration-only" })', 'Jump to Declaration'],
+                                    \'r': ['call rtags#RenameSymbolUnderCursor()', 'Rename Symbol']}
+
+let g:leader_prefix_dict.g = {'name': 'Navigate',
+                                    \'f': ['call rtags#FindRefs()', 'Find Usage'],
+                                    \'j': ['call rtags#jumpTo(g:SAME_WINDOW)', 'Jump To']}
 
 let g:rtagsUseDefaultMappings = 0
-noremap <Leader>gi :call rtags#SymbolInfo()<CR>
-noremap <Leader>. :call rtags#JumpTo(g:SAME_WINDOW)<CR>
-noremap <Leader>gJ :call rtags#JumpTo(g:SAME_WINDOW, { '--declaration-only' : '' })<CR>
+call leaderGuide#register_prefix_descriptions(' ', "g:space_prefix_dict")
+call leaderGuide#register_prefix_descriptions(',', "g:leader_prefix_dict")
+nmap <space> :LeaderGuide '<space>'<CR>
+nnoremap <Plug>(file-actions) :<c-u>LeaderGuide ','<CR>
+nmap <space>, <Plug>(file-actions)
+nmap <space>. <Plug>leaderguide-global
+nmap , :<c-u>LeaderGuide ','<CR>
+nnoremap <leader>cd :call CscopeFind('g', expand('<cword>'))<CR>
+nnoremap <leader>ca :call CscopeFindInteractive(expand('<cword>'))<CR>
 noremap <Leader>gS :call rtags#JumpTo(g:H_SPLIT)<CR>
 noremap <Leader>gV :call rtags#JumpTo(g:V_SPLIT)<CR>
 noremap <Leader>gT :call rtags#JumpTo(g:NEW_TAB)<CR>
 noremap <Leader>gp :call rtags#JumpToParent()<CR>
-noremap <Leader>gf :call rtags#FindRefs()<CR>
 noremap <Leader>gF :call rtags#FindRefsCallTree()<CR>
 noremap <Leader>gn :call rtags#FindRefsByName(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
 noremap <Leader>gs :call rtags#FindSymbols(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
-noremap <Leader>r :call rtags#ReindexFile()<CR>
+noremap <Leader>gr :call rtags#ReindexFile()<CR>
 noremap <Leader>gl :call rtags#ProjectList()<CR>
-noremap <Leader>gw :call rtags#RenameSymbolUnderCursor()<CR>
 noremap <Leader>gv :call rtags#FindVirtuals()<CR>
 noremap <Leader>gb :call rtags#JumpBack()<CR>
 noremap <Leader>gh :call rtags#ShowHierarchy()<CR>
