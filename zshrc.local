@@ -13,6 +13,7 @@ fi
 alias vi=nvim
 alias vim=nvim
 alias mutt=neomutt
+alias sway="export XKB_DEFAULT_LAYOUT=gb; sway"
 alias bazeltargets='for i in `find -maxdepth 1 -type d -not -name ".*" -name "*"`; do bazel query "kind(\".*\", \"${i#\./}:all\")";done'
 export VISUAL=nvim
 export EDITOR=$VISUAL
