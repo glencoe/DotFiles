@@ -4,18 +4,20 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/home/luk/.local/share/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/lukas/.local/share/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/home/luk/.local/share/dein')
-  call dein#begin('/home/luk/.local/share/dein')
+if dein#load_state('/home/lukas/.local/share/dein')
+  call dein#begin('/home/lukas/.local/share/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/luk/.local/share/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('/home/lukas/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
   call dein#add('shiracamus/vim-syntax-x86-objdump-d')
   call dein#add('lyuts/vim-rtags')
+  call dein#add('rzaluska/deoplete-rtags')
+  " call dein#add('zchee/deoplete-clang')
 
   " Add or remove your plugins here:
   " autoclose brackets
@@ -33,7 +35,10 @@ if dein#load_state('/home/luk/.local/share/dein')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('itchyny/lightline.vim')
-  call dein#add('ap/vim-buftabline')
+  
+  "linting
+  call dein#add('neomake/neomake')
+  " call dein#add('ap/vim-buftabline')
   call dein#add('tpope/vim-commentary')
   call dein#add('vim-ruby/vim-ruby')
   call dein#add('plasticboy/vim-markdown')
@@ -42,6 +47,7 @@ if dein#load_state('/home/luk/.local/share/dein')
   call dein#add('pgdouyon/vim-accio')
   " auto completion engine
   call dein#add('Shougo/deoplete-rct')
+  call dein#add('Shougo/deol.nvim')
   call dein#add('eagletmt/neco-ghc')
   call dein#add('zchee/deoplete-jedi')
   call dein#add('zchee/deoplete-zsh')
@@ -88,6 +94,7 @@ endif
 " Required:
 filetype plugin indent on
 syntax enable
+let g:deoplete#enable_at_startup = 1
 
 " If you want to install not installed plugins on startup.
 "if dein#check_install()
@@ -95,8 +102,8 @@ syntax enable
 "endif
 
 "End dein Scripts-------------------------
-source /home/luk/.config/nvim/denite.vim
-source /home/luk/.config/nvim/lightline.vim
-source /home/luk/.config/nvim/deoplete.vim
-source /home/luk/.config/nvim/misc.vim
-source /home/luk/.config/nvim/keymapping.vim
+source /home/lukas/.config/nvim/denite.vim
+source /home/lukas/.config/nvim/lightline.vim
+source /home/lukas/.config/nvim/deoplete.vim
+source /home/lukas/.config/nvim/misc.vim
+source /home/lukas/.config/nvim/keymapping.vim

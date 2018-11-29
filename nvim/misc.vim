@@ -20,3 +20,10 @@ set noshowmode
 let g:echodoc#enable_at_startup = 1
 let g:rooter_use_lcd = 1
 let g:rooter_silent_chdir=1
+"persistent file history
+set undofile
+set undodir=~/.config/nvim/undodir
+
+"system clipboard
+set clipboard+=unnamed
+call neomake#configure#automake('w')

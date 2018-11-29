@@ -10,6 +10,9 @@ let g:space_prefix_dict.f = { 'name': 'Files',
             \'r': ['Denite file_mru', 'recent'],
             \}
 
+call denite#custom#source('file, file_mru', 'matchers', ['matcher/regexp'])
+call denite#custom#source('file, file_mru', 'sorters', ['sorter/rank'])
+
 let g:space_prefix_dict.b = { 'name': 'Buffer',
                                     \'b': ['Denite buffer', 'buffers' ],
                                     \'d': ['bd', 'close'],
@@ -29,6 +32,7 @@ let g:space_prefix_dict.w = { 'name': 'Window',
                                     \'-': ['new', 'split horizontally'],
                                     \'<C-I>': ['wincmd p', 'previous'],
                                     \'d': ['close', 'close'],
+                                    \'D': ['only', 'close others'],
                                     \'h': ['wincmd h', 'left'],
                                     \'l': ['wincmd l', 'right'],
                                     \'k': ['wincmd k', 'up'],
@@ -39,8 +43,17 @@ let g:space_prefix_dict.w = { 'name': 'Window',
                                     \'J': ['wincmd J', 'move down'], 
                                     \}
 
+let g:space_prefix_dict.w.r = { 'name': 'Window resizing',
+                                    \'l': ['vertical resize +1  | call feedkeys("\<space>wr")', 'increase width'],
+                                    \'h': ['vertical resize -1 | call feedkeys("\<space>wr")', 'decrease width'],
+                                    \'k': ['resize -1 | call feedkeys("\<Space>wr")', 'decrease height'],
+                                    \'j': ['resize +1 | call feedkeys("\<Space>wr")', 'increase height'],
+                                    \'q': ['', 'exit state']
+                                    \}
+
 let g:space_prefix_dict.p = { 'name': 'Project',
-                                    \'t': ['!bazel test test:all', 'run tests']}
+                                    \'t': ['!bazel test test:all', 'run tests'],
+                                    \}
 
 let g:space_prefix_dict.g = { 'name': 'Git',
                                     \'w': ['Gwrite', 'add and write'],
@@ -58,24 +71,24 @@ nnoremap <leader>cd :call CscopeFind('g', expand('<cword>'))<CR>
 nnoremap <leader>ca :call CscopeFindInteractive(expand('<cword>'))<CR>
 
 let g:rtagsUseDefaultMappings = 0
-noremap <Leader>ri :call rtags#SymbolInfo()<CR>
-noremap <Leader>rj :call rtags#JumpTo(g:SAME_WINDOW)<CR>
-noremap <Leader>rJ :call rtags#JumpTo(g:SAME_WINDOW, { '--declaration-only' : '' })<CR>
-noremap <Leader>rS :call rtags#JumpTo(g:H_SPLIT)<CR>
-noremap <Leader>rV :call rtags#JumpTo(g:V_SPLIT)<CR>
-noremap <Leader>rT :call rtags#JumpTo(g:NEW_TAB)<CR>
-noremap <Leader>rp :call rtags#JumpToParent()<CR>
-noremap <Leader>rf :call rtags#FindRefs()<CR>
-noremap <Leader>rF :call rtags#FindRefsCallTree()<CR>
-noremap <Leader>rn :call rtags#FindRefsByName(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
-noremap <Leader>rs :call rtags#FindSymbols(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
-noremap <Leader>rr :call rtags#ReindexFile()<CR>
-noremap <Leader>rl :call rtags#ProjectList()<CR>
-noremap <Leader>rw :call rtags#RenameSymbolUnderCursor()<CR>
-noremap <Leader>rv :call rtags#FindVirtuals()<CR>
-noremap <Leader>rb :call rtags#JumpBack()<CR>
-noremap <Leader>rh :call rtags#ShowHierarchy()<CR>
-noremap <Leader>rC :call rtags#FindSuperClasses()<CR>
-noremap <Leader>rc :call rtags#FindSubClasses()<CR>
-noremap <Leader>rd :call rtags#Diagnostics()<CR>
+noremap <Leader>gi :call rtags#SymbolInfo()<CR>
+noremap <Leader>. :call rtags#JumpTo(g:SAME_WINDOW)<CR>
+noremap <Leader>gJ :call rtags#JumpTo(g:SAME_WINDOW, { '--declaration-only' : '' })<CR>
+noremap <Leader>gS :call rtags#JumpTo(g:H_SPLIT)<CR>
+noremap <Leader>gV :call rtags#JumpTo(g:V_SPLIT)<CR>
+noremap <Leader>gT :call rtags#JumpTo(g:NEW_TAB)<CR>
+noremap <Leader>gp :call rtags#JumpToParent()<CR>
+noremap <Leader>gf :call rtags#FindRefs()<CR>
+noremap <Leader>gF :call rtags#FindRefsCallTree()<CR>
+noremap <Leader>gn :call rtags#FindRefsByName(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
+noremap <Leader>gs :call rtags#FindSymbols(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
+noremap <Leader>r :call rtags#ReindexFile()<CR>
+noremap <Leader>gl :call rtags#ProjectList()<CR>
+noremap <Leader>gw :call rtags#RenameSymbolUnderCursor()<CR>
+noremap <Leader>gv :call rtags#FindVirtuals()<CR>
+noremap <Leader>gb :call rtags#JumpBack()<CR>
+noremap <Leader>gh :call rtags#ShowHierarchy()<CR>
+noremap <Leader>gC :call rtags#FindSuperClasses()<CR>
+noremap <Leader>gc :call rtags#FindSubClasses()<CR>
+noremap <Leader>gd :call rtags#Diagnostics()<CR>
 

@@ -1,4 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/luk/Work/CommunicationModule/integration_tests'
-let g:netrw_dirhist_2='/home/luk/Work/CommunicationModule/integration_tests/src'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/lukas/DotFiles/nvim'
+let g:netrw_dirhist_2='/home/lukas/DotFiles/nvim/undodir'
+let g:netrw_dirhist_3='/home/lukas/DotFiles/nvim'
+let g:netrw_dirhist_4='/home/lukas/DotFiles'
