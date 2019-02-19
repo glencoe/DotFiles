@@ -44,15 +44,15 @@ let g:space_prefix_dict.w = { 'name': 'Window',
                                     \}
 
 let g:space_prefix_dict.w.r = { 'name': 'Window resizing',
-                                    \'l': ['vertical resize +1  | call feedkeys("\<space>wr")', 'increase width'],
-                                    \'h': ['vertical resize -1 | call feedkeys("\<space>wr")', 'decrease width'],
-                                    \'k': ['resize -1 | call feedkeys("\<Space>wr")', 'decrease height'],
-                                    \'j': ['resize +1 | call feedkeys("\<Space>wr")', 'increase height'],
+                                    \'l': ['vertical resize +5  | call feedkeys("\<space>wr")', 'increase width'],
+                                    \'h': ['vertical resize -5 | call feedkeys("\<space>wr")', 'decrease width'],
+                                    \'k': ['resize -5 | call feedkeys("\<Space>wr")', 'decrease height'],
+                                    \'j': ['resize +5 | call feedkeys("\<Space>wr")', 'increase height'],
                                     \'q': ['', 'exit state']
                                     \}
 
 let g:space_prefix_dict.p = { 'name': 'Project',
-                                    \'t': ['!bazel test test:all', 'run tests'],
+                                    \'t': ['Shell bazel test test:all', 'run tests'],
                                     \}
 
 let g:space_prefix_dict.v = { 'name': 'Git',
@@ -65,12 +65,19 @@ let g:space_prefix_dict.v = { 'name': 'Git',
 
 let g:leader_prefix_dict = {'name': 'Local Actions',
                                     \'i': ['call rtags#SymbolInfo()', 'Symbol Info'],
-                                    \'.': ['call rtags#JumpTo(g:SAME_WINDOW, { "--declaration-only" })', 'Jump to Declaration'],
-                                    \'r': ['call rtags#RenameSymbolUnderCursor()', 'Rename Symbol']}
+                                    \'.': ['call rtags#JumpTo(g:SAME_WINDOW)', 'Jump to Declaration'],
+                                    \'R': ['call rtags#RenameSymbolUnderCursor()', 'Rename Symbol'],
+                                    \'r': ['call rtags#ReindexFile()', 'Reindex File']}
 
 let g:leader_prefix_dict.g = {'name': 'Navigate',
                                     \'f': ['call rtags#FindRefs()', 'Find Usage'],
-                                    \'j': ['call rtags#jumpTo(g:SAME_WINDOW)', 'Jump To']}
+                                    \'j': ['call rtags#JumpTo(g:SAME_WINDOW)', 'Jump To']}
+
+let g:leader_prefix_dict.k = {'name': 'Test',
+                                    \'f': ['TestFile', 'Test File']}
+let g:space_prefix_dict.k = {'name': 'Test',
+                                    \'f': ['TestFile', 'Test File']}
+
 
 let g:rtagsUseDefaultMappings = 0
 call leaderGuide#register_prefix_descriptions(' ', "g:space_prefix_dict")

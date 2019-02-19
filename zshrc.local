@@ -10,6 +10,8 @@ if [[ $TERM == xterm-termite ]]; then
     . /etc/profile.d/vte.sh
     __vte_osc7
 fi
+
+alias start_gnome="XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session"
 alias vi=nvim
 alias vim=nvim
 alias mutt=neomutt
@@ -19,4 +21,4 @@ export VISUAL=nvim
 export EDITOR=$VISUAL
 export HALMAC=80:ee:73:36:0d:85
 KEYTIMEOUT=1
-PATH=$PATH:/home/luk/pycharm-professional-2018.1.2/pycharm-2018.1.2/bin
+PATH=$PATH:/home/lukas/pycharm-professional-2018.1.2/pycharm-2018.1.2/bin:/home/lukas/.local/bin:/home/lukas/.gem/ruby/2.6.0/bin

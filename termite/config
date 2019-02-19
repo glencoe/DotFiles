@@ -87,51 +87,101 @@ scrollback_lines = 10000
 #color20 = #a09f93
 #color21 = #e8e6df
 
-[colors]
-# Base16 OneDark
-# Author: Lalit Magant (http://github.com/tilal6991)
+# [colors]
+# # Base16 OneDark
+# # Author: Lalit Magant (http://github.com/tilal6991)
 
-foreground      = #abb2bf
-foreground_bold = #b6bdca
-cursor          = #b6bdca
-background      = #282c34
+# foreground      = #abb2bf
+# foreground_bold = #b6bdca
+# cursor          = #b6bdca
+# background      = #282c34
+
+# # 16 color space
+
+# # Black, Gray, Silver, White
+# color0  = #282c34
+# color8  = #545862
+# color7  = #abb2bf
+# color15 = #c8ccd4
+
+# # Red
+# color1  = #e06c75
+# color9  = #e06c75
+
+# # Green
+# color2  = #98c379
+# color10 = #98c379
+
+# # Yellow
+# color3  = #e5c07b
+# color11 = #e5c07b
+
+# # Blue
+# color4  = #61afef
+# color12 = #61afef
+
+# # Purple
+# color5  = #c678dd
+# color13 = #c678dd
+
+# # Teal
+# color6  = #56b6c2
+# color14 = #56b6c2
+
+# # Extra colors
+# color16 = #d19a66
+# color17 = #be5046
+# color18 = #353b45
+# color19 = #3e4451
+# color20 = #565c64
+# color21 = #b6bdca
+
+[colors]
+# Base16 Monokai
+# Author: Wimer Hazenberg (http://www.monokai.nl)
+
+foreground          = #f8f8f2
+foreground_bold     = #f5f4f1
+cursor              = #f5f4f1
+cursor_foreground   = #272822
+background          = rgba(39, 40, 34)
 
 # 16 color space
 
 # Black, Gray, Silver, White
-color0  = #282c34
-color8  = #545862
-color7  = #abb2bf
-color15 = #c8ccd4
+color0  = #272822
+color8  = #75715e
+color7  = #f8f8f2
+color15 = #f9f8f5
 
 # Red
-color1  = #e06c75
-color9  = #e06c75
+color1  = #f92672
+color9  = #f92672
 
 # Green
-color2  = #98c379
-color10 = #98c379
+color2  = #a6e22e
+color10 = #a6e22e
 
 # Yellow
-color3  = #e5c07b
-color11 = #e5c07b
+color3  = #f4bf75
+color11 = #f4bf75
 
 # Blue
-color4  = #61afef
-color12 = #61afef
+color4  = #66d9ef
+color12 = #66d9ef
 
 # Purple
-color5  = #c678dd
-color13 = #c678dd
+color5  = #ae81ff
+color13 = #ae81ff
 
 # Teal
-color6  = #56b6c2
-color14 = #56b6c2
+color6  = #a1efe4
+color14 = #a1efe4
 
 # Extra colors
-color16 = #d19a66
-color17 = #be5046
-color18 = #353b45
-color19 = #3e4451
-color20 = #565c64
-color21 = #b6bdca
+color16 = #fd971f
+color17 = #cc6633
+color18 = #383830
+color19 = #49483e
+color20 = #a59f85
+color21 = #f5f4f1

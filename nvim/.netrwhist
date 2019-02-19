@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/lukas/DotFiles/nvim'
-let g:netrw_dirhist_2='/home/lukas/DotFiles/nvim/undodir'
-let g:netrw_dirhist_3='/home/lukas/DotFiles/nvim'
-let g:netrw_dirhist_4='/home/lukas/DotFiles'
-let g:netrw_dirhist_5='/home/lukas/Documents/uni/Angewandte_Informatik_Master/Semester_3/Project_CBVSEC/Repos/edgedevice/src'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/lukas/Documents/uni/Angewandte_Informatik_Master/Semester_3/Project_CBVSEC/Repos/edgedevice/lib/ElasticNode/circular_buffer'
+let g:netrw_dirhist_2='/home/lukas/Documents/uni/Angewandte_Informatik_Master/Semester_3/Project_CBVSEC/Repos/edgedevice/lib/ElasticNode/flash'
+let g:netrw_dirhist_3='/home/lukas/Documents/uni/Angewandte_Informatik_Master/Semester_3/Project_CBVSEC/data_processing/SparqlUtil'
+let g:netrw_dirhist_4='/home/lukas/Documents/uni/Angewandte_Informatik_Master/Semester_3/Project_CBVSEC/Repos/edgedevice/FPGAGregor'
+let g:netrw_dirhist_5='/home/lukas/.gradle'
+let g:netrw_dirhist_6='/home/lukas/Work/HaskellCD'

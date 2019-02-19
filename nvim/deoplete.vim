@@ -7,11 +7,11 @@
 set completeopt+=noinsert
 
 " deoplete tab completion
-inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
-inoremap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
-imap <expr><C-l> pumvisible() ? deoplete#complete_common_string() : neosnippet#expandable_or_jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "\<C-l>"
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+" inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+" inoremap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
+" imap <expr><C-l> pumvisible() ? deoplete#complete_common_string() : neosnippet#expandable_or_jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "\<C-l>"
+" inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 " if has("cscope")
 "   set csprg=/usr/bin/cscope
 "   set csto=0
