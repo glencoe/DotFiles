@@ -3,15 +3,23 @@ source "%val{config}/plugins/plug.kak/rc/plug.kak"
 colorscheme gruvbox
 
 plug "andreyorst/powerline.kak" %{
-    hook -once global WinCreate .* %{
-        powerline-theme gruvbox
-    }
+	hook -once global WinCreate .* %{
+	  powerline-theme gruvbox
+	}
+}
+
+plug "andreyorst/smarttab.kak" %{
+	set-option global softtabstop 4
+	set-option global tabstop 4
+	hook global WinCreate .* %{
+		smarttab
+	}
 }
 
 plug "alexherbo2/auto-pairs.kak" %{
-    hook global WinCreate .* %{
-        auto-pairs-enable
-    }
+	hook global WinCreate .* %{
+		auto-pairs-enable
+	}
 }
 
 plug "alexherbo2/search-highlighter.kak"
@@ -21,10 +29,11 @@ hook global InsertCompletionShow .* %{ map window insert <tab> <c-n>; map window
 hook global InsertCompletionHide .* %{ unmap window insert <tab> <c-n>; unmap window insert <s-tab> <c-p>  }
 define-command find -params 1 -shell-script-candidates %{ ag -g '' --ignore "$kak_opt_ignored_files"  } %{ edit %arg{1}  }
 hook global WinCreate .* %{
-    add-highlighter global/ number-lines -relative -hlcursor
-    add-highlighter global/ wrap -indent
-    ranger-open-on-edit-directory
+	add-highlighter global/ number-lines -relative -hlcursor
+	add-highlighter global/ wrap -indent
+	ranger-open-on-edit-directory
 }
+
 
 #make space leader
 map global normal <space> , -docstring 'leader'
