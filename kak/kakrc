@@ -34,12 +34,16 @@ hook global WinCreate .* %{
 	ranger-open-on-edit-directory
 }
 
-
+hook global BufSetOption filetype=ruby %{
+	map buffer user t -docstring 'run tests' ':<space>tmux-terminal-vertical sh -c "rake test; read"<ret>'
+}
 #make space leader
 map global normal <space> , -docstring 'leader'
 map global normal <backspace> <space> -docstring 'remove all selections except main'
 map global normal <a-backspace> <a-space> -docstring 'remove main sel'
 map global user <tab> -docstring 'alternate buffer' ':<space>buffer-previous<ret>'
+map global user p -docstring 'paste from sys before selection' '!xsel --output --clipboard<ret>'
+map global user P -docstring 'paste from sys after selection' '<a-!>xsel --output --clipboard<ret>'
 
 declare-user-mode file_mode
 map global user f -docstring 'files' ':<space>enter-user-mode file_mode<ret>'

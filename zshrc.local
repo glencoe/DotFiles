@@ -9,4 +9,4 @@ export VISUAL=kak
 export EDITOR=$VISUAL
 export HALMAC=80:ee:73:36:0d:85
 KEYTIMEOUT=1
-PATH=$PATH:/home/lukas/.local/bin:/home/lukas/.gem/ruby/2.6.0/bin
+PATH=$PATH:/home/lukas/.local/bin:/home/lukas/.gem/ruby/2.5.0/bin
