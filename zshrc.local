@@ -1,24 +1,12 @@
-if [ -z "$INSIDE_EMACS" ]; then
-    if [[ $TERM == tmux-256color || $TERM == xterm-256color || $TERM == xterm-termite ]]; then
-	    POWERLEVEL9K_MODE='awesome-font-config'
-	    POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-	    source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
-	    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator time)
-    fi
-fi
-if [[ $TERM == xterm-termite ]]; then
-    . /etc/profile.d/vte.sh
-    __vte_osc7
-fi
-
-alias start_gnome="XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session"
+fpath=($HOME/.zfunctions $fpath)
+autoload -U promptinit; promptinit
+prompt spaceship
 alias vi=nvim
 alias vim=nvim
 alias mutt=neomutt
-alias sway="export XKB_DEFAULT_LAYOUT=gb; sway"
 alias bazeltargets='for i in `find -maxdepth 1 -type d -not -name ".*" -name "*"`; do bazel query "kind(\".*\", \"${i#\./}:all\")";done'
-export VISUAL=nvim
+export VISUAL=kak
 export EDITOR=$VISUAL
 export HALMAC=80:ee:73:36:0d:85
 KEYTIMEOUT=1
-PATH=$PATH:/home/lukas/pycharm-professional-2018.1.2/pycharm-2018.1.2/bin:/home/lukas/.local/bin:/home/lukas/.gem/ruby/2.6.0/bin
+PATH=$PATH:/home/lukas/.local/bin:/home/lukas/.gem/ruby/2.6.0/bin
