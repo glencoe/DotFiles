@@ -1,0 +1,45 @@
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+
+colorscheme gruvbox
+
+plug "andreyorst/powerline.kak" %{
+    hook -once global WinCreate .* %{
+        powerline-theme gruvbox
+    }
+}
+
+plug "alexherbo2/auto-pairs.kak" %{
+    hook global WinCreate .* %{
+        auto-pairs-enable
+    }
+}
+
+plug "alexherbo2/search-highlighter.kak"
+
+map global normal '#' :comment-line<ret>
+hook global InsertCompletionShow .* %{ map window insert <tab> <c-n>; map window insert <s-tab> <c-p>  }
+hook global InsertCompletionHide .* %{ unmap window insert <tab> <c-n>; unmap window insert <s-tab> <c-p>  }
+define-command find -params 1 -shell-script-candidates %{ ag -g '' --ignore "$kak_opt_ignored_files"  } %{ edit %arg{1}  }
+hook global WinCreate .* %{
+    add-highlighter global/ number-lines -relative -hlcursor
+    add-highlighter global/ wrap -indent
+    ranger-open-on-edit-directory
+}
+
+#make space leader
+map global normal <space> , -docstring 'leader'
+map global normal <backspace> <space> -docstring 'remove all selections except main'
+map global normal <a-backspace> <a-space> -docstring 'remove main sel'
+map global user <tab> -docstring 'alternate buffer' ':<space>buffer-previous<ret>'
+
+declare-user-mode file_mode
+map global user f -docstring 'files' ':<space>enter-user-mode file_mode<ret>'
+map global file_mode f -docstring 'find' ':<space>find<space>'
+map global file_mode b -docstring 'file browser' ':<space>ranger<ret>'
+
+declare-user-mode buffer_mode
+map global user b -docstring 'buffers' ':<space>enter-user-mode buffer_mode<ret>'
+map global buffer_mode b -docstring 'list buffers' ':<space>buffer<space><tab><tab>'
+map global buffer_mode d -docstring 'delete buffer' ':<space>delete-buffer<ret>'
+map global buffer_mode n -docstring 'next buffer' ':<space>buffer-next<ret>'
+map global buffer_mode p -docstring 'previous buffer' ':<space>buffer-previous<ret>'
