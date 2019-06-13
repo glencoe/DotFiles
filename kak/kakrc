@@ -1,28 +1,37 @@
-source "%val{config}/plugins/plug.kak/rc/plug.kak"
+#source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
 colorscheme gruvbox
 
-plug "andreyorst/powerline.kak" %{
-	hook -once global WinCreate .* %{
-	  powerline-theme gruvbox
-	}
-}
+#plug "andreyorst/powerline.kak" %{
+#	hook -once global WinCreate .* %{
+#	  powerline-theme gruvbox
+#	}
+#}
 
-plug "andreyorst/smarttab.kak" %{
-	set-option global softtabstop 4
-	set-option global tabstop 4
-	hook global WinCreate .* %{
-		smarttab
-	}
-}
+#plug "andreyorst/smarttab.kak" %{
+#	set-option global softtabstop 2
+#	set-option global tabstop 2
+#	hook global WinCreate .* %{
+#		expandtab
+#	}
+#}
 
-plug "alexherbo2/auto-pairs.kak" %{
-	hook global WinCreate .* %{
-		auto-pairs-enable
-	}
-}
-
-plug "alexherbo2/search-highlighter.kak"
+#plug "alexherbo2/auto-pairs.kak" %{
+#	hook global WinCreate .* %{
+#		auto-pairs-enable
+#	}
+#}
+#
+#plug "ul/kak-lsp" do %{
+#    cargo build --release --locked
+#    cargo install --force
+#	eval %sh{kak-lsp --kakoune -s $kak_session}
+#	nop %sh{ (kak-lsp -s $kak_session -vvv ) > /tmp/kak-lsp.log 2>&1 < /dev/null & }
+#	lsp-enable
+#    hook global KakEnd .* lsp-exit
+#}
+#
+#plug "alexherbo2/search-highlighter.kak"
 
 map global normal '#' :comment-line<ret>
 hook global InsertCompletionShow .* %{ map window insert <tab> <c-n>; map window insert <s-tab> <c-p>  }
@@ -37,6 +46,7 @@ hook global WinCreate .* %{
 hook global BufSetOption filetype=ruby %{
 	map buffer user t -docstring 'run tests' ':<space>tmux-terminal-vertical sh -c "rake test; read"<ret>'
 }
+
 #make space leader
 map global normal <space> , -docstring 'leader'
 map global normal <backspace> <space> -docstring 'remove all selections except main'
@@ -44,11 +54,13 @@ map global normal <a-backspace> <a-space> -docstring 'remove main sel'
 map global user <tab> -docstring 'alternate buffer' ':<space>buffer-previous<ret>'
 map global user p -docstring 'paste from sys before selection' '!xsel --output --clipboard<ret>'
 map global user P -docstring 'paste from sys after selection' '<a-!>xsel --output --clipboard<ret>'
+map global user l -docstring 'language server mode' ':<space>enter-user-mode<space>lsp<ret>'
 
 declare-user-mode file_mode
 map global user f -docstring 'files' ':<space>enter-user-mode file_mode<ret>'
 map global file_mode f -docstring 'find' ':<space>find<space>'
 map global file_mode b -docstring 'file browser' ':<space>ranger<ret>'
+map global file_mode k -docstring 'edit kakrc' ': edit "%val{config}/kakrc"<ret>'
 
 declare-user-mode buffer_mode
 map global user b -docstring 'buffers' ':<space>enter-user-mode buffer_mode<ret>'
